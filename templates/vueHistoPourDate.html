@@ -1,0 +1,33 @@
+{% include "vueEntete.html" %}
+{% include "vueEnteteGestionnaire.html" %}
+
+
+<center><h3>Historique du personnel pour une date de restauration.</h3></center>
+<form id="credit" role="form" action="/gestionnaire/historique/pourDate/laDate" method="POST">
+		<div class="form-group">
+			<center><input type="date" name="laDate" placeholder="Saisir la date : aaaa-mm-jj"/></center>
+			<center><button type="submit" name="laDate" value="historique">Envoyer</button></center>
+		</div>
+
+</form>
+<table class="table">
+<thead class="thead-dark">
+	<tr>
+		<td><h3 class="tableau">N° Carte</h3></td>
+		<td><h3 class="tableau">Nom</h3></td>
+		<td><h3 class="tableau">Prénom</h3></td>
+		<td><h3 class="tableau">Service</h3></td>
+	</tr>
+	</thead>
+		{% for i in range(rangePerso) %}
+		<tbody>
+			<tr >
+				<td><h3 class="tableau">{{leNoCarte[i]}}</h3></td>
+				<td><h3 class="tableau">{{leNom[i]}}</h3></td>
+				<td><h3 class="tableau">{{lePrenom[i]}}</h3></td>
+				<td><h3 class="tableau">{{leService[i]}}</h3></td>
+			</tr>
+		</tbody>
+{% endfor%}
+</table>
+{% include "vuePied.html" %}

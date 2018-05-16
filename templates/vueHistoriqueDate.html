@@ -1,0 +1,30 @@
+{% include "vueEntete.html" %}
+{% include "vueEnteteGestionnaire.html" %}
+
+
+<center><h3>Liste des cartes ayant réservé le {{uneDate}}</h3></center>
+
+
+
+<table class="table">
+<thead class="thead-dark">
+	<tr>
+		<td><h3 class="tableau">Matricule</h3></td>
+		<td><h3 class="tableau">Nom</h3></td>
+		<td><h3 class="tableau">Prénom</h3></td>
+		<td><h3 class="tableau">Service</h3></td>
+
+	</tr>
+	</thead>
+	{% for i in range(rangeD) %}
+	<tbody>
+		<tr >
+			<td><h3 class="tableau">{{leNoCarte[i]}}</h3></td>
+			<td><h3 class="tableau">{{leNom[i]}}</h3></td>
+			<td><h3 class="tableau">{{lePrenom[i]}}</h3></td>
+			<td><h3 class="tableau">{{leService[i]}}</h3></td>
+	{% endfor%}
+		</tr >
+	</tbody>
+</table>
+{% include "vuePied.html" %}

@@ -1,0 +1,36 @@
+{% include "vueEntete.html" %}
+{% include "vueEnteteGestionnaire.html" %}
+
+
+<center><h3>Liste du personnel sans carte de restauration.</h3></center>
+<table class="table">
+<thead class="thead-dark">
+	<tr>
+		<td><h3 class="tableau">Matricule</h3></td>
+		<td><h3 class="tableau">Nom</h3></td>
+		<td><h3 class="tableau">Prénom</h3></td>
+		<td><h3 class="tableau">Service</h3></td>
+	</tr>
+	</thead>	
+
+	{% for i in range(rangePerso) %}
+	<tbody>
+		<tr>
+			<td><h3 class="tableau">{{laMatricule[i]}}</h3></td>
+			<td><h3 class="tableau">{{leNom[i]}}</h3></td>
+			<td><h3 class="tableau">{{lePrenom[i]}}</h3></td>
+			<td><h3 class="tableau">{{leService[i]}}</h3></td>
+			<td>
+				<h3 class="tableau">
+					<form id="creerCompte" role="form" action="/gestionnaire/sansCarte/creationCompte" method="POST">
+						<button class="btn btn-primary" type="numeric" class="form-control" name="matricule" id="compte" value="{{laMatricule[i]}}" onclick="return alert( 'Le compte pour le personnel de matricule {{laMatricule[i]}} à bien été crée.' )">Créer un compte</button>
+					</form>
+				</h3>
+			</td>
+		</tr>
+	</tbody>
+{% endfor%}
+</table>
+
+{% include "vuePied.html" %}
+

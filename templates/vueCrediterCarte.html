@@ -1,0 +1,18 @@
+{% include "vueEntete.html" %}
+{% include "vueEnteteUsager.html" %}
+
+<h3>Créditer la carte {{leNoCarte}} :</h3>
+
+<br>
+
+<form id="credit" role="form" action="/gestionnaire/avecCarte/crediter/montant" method="POST">
+		<div class="form-group">
+			<label for="solde">Ajoutez le solde à créditer</label>
+			<input id="solde" class="form-control" type="float" name="credit" placeholder="Saisir le montant"/>
+			<button class="btn btn-primary" type="numeric" name="numeroCarte" id="noCarte" value="{{leNoCarte}}">Envoyer</button>
+		</div>
+
+</form>
+
+
+{% include "vuePied.html" %}
